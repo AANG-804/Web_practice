@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" , href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="hello">안녕하세요</h2>
+
+    <div class="alert-box" id="alert">
+      <p id="error-name">에러 메세지</p>
+      <button id="close">닫기</button>
+    </div>
+    <button onclick="Open('alert', 1);">버튼 1</button>
+    <button onclick="Open('alert', 2);">버튼 2</button>
+
+    <script>
+      document.getElementById('close').addEventListener('click', function () {
+        document.getElementById('alert').style.display = 'none';
+      });
+
+      document.getElementById('hello').innerHTML = '안녕';
+
+      function Open(id, code) {
+        document.getElementById(id).style.display = 'block';
+        if (code == 1) {
+          document.getElementById('error-name').innerText =
+            '아이디를 입력하세요';
+        } else {
+          document.getElementById('error-name').innerText = '비번을 입력하세요';
+        }
+      }
+    </script>
+  </body>
+</html>
