@@ -1,21 +1,3 @@
-.titles {
-    font-size: 20px;
-}
-
-body {
-    color: beige;
-}
-
-h1 {
-    color: rgb(81, 4, 224);
-    transition: 0.5s ease-in-out;
-}
-
-.sexy-font {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: oblique;
-}
-
-.active {
-    color: tomato;
+.hidden {
+    display: none;
 }

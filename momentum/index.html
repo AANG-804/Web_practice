@@ -7,11 +7,15 @@
     <link rel="stylesheet", href="./src/style.css">
 </head>
 <body>
-    <div class="titles">
-        <h1 class="sexy-font">Click me!!</h1>
-        <p>Hello~</p>
-    </div>
-
+    <form class="hidden" id="login-form">
+        <input 
+        required
+        maxlength="15" 
+        placeholder="What is your name?" 
+        id="userNameInput">
+        <input type="submit" value="Log In">
+    </form>
+    <h1 class="hidden" id="greeting"></h1>
     <script src="app.js"></script>
 </body>
 </html>
