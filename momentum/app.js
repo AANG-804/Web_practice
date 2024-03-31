@@ -1,29 +1,16 @@
 function handleTitleClick() {
-    console.log("text has been clicked")
+    const clickedClassName = "active"
+    // if (h1.classList.contains(clickedClassName)) {
+    //     h1.classList.remove(clickedClassName)
+    // } else {
+    //     h1.classList.add(clickedClassName)
+    // }
+    h1.classList.toggle(clickedClassName);
 }
 
-function handleMouseEnter(){
-    text.style.color = "blue"
-    text.innerText = "Mouse is IN!"
-    console.log("Mouse Enter~")
-}
+const h1 = document.querySelector('div.titles:first-child h1');
 
-function handleMouseLeave(){
-    text.style.color = "red"
-    text.innerText = "Mouse is Out!"
-    console.log("Mouse leaves~")
-}
-
-function handleResize() {
-    document.body.style.backgroundColor = "tomato"
-}
-
-const text = document.querySelector('div.titles:first-child p');
-text.addEventListener("click", handleTitleClick);
-text.addEventListener("mouseenter", handleMouseEnter);
-text.addEventListener("mouseleave", handleMouseLeave);
-
-window.addEventListener("resize", handleResize);
+h1.addEventListener("click", handleTitleClick);
 
 
 
