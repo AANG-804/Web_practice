@@ -1,12 +1,17 @@
 import propTypes from "prop-types"
 import styles from "./Button.module.css"
 
-function Button({text, }) {
-    return <button className={styles.btn}>{text}</button>
+function Button({text, onClick}) {
+    return <button 
+    className={styles.btn}
+    onClick={onClick}
+    >{text}
+    </button>
 };
 
 Button.propTypes = {
     text: propTypes.string.isRequired,
+    onClick: propTypes.func,
 }
 
 export default Button;
