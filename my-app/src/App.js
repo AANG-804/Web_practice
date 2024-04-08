@@ -3,32 +3,23 @@ import styles from "./App.module.css"
 import { useState, useEffect } from "react";
 
 function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, setKeyword] = useState("");
+  const [hide, setHide] = useState(false);
 
-  function onSearch(event) {
-    return setKeyword(event.target.value);
-  }
-  function onClick() {
-    return setValue((prev) => prev+1)
-  }
-
-  function searchAPI(keyword) {
-    console.log("Search For", keyword);
-  }
+  const onClick = () => {
+    setHide(prev => !prev);
+  };
   
-  useEffect(() => {
-    if ((keyword !== "") && (keyword.length > 5)){
-      searchAPI(keyword);
-    }
-  }, [keyword]);
-  
-
+  function Hello() {
+    useEffect(() => {
+      console.log("I'm Here!");
+      return () => console.log('Bye');
+    }, []);
+    return <h1>Hello!</h1>
+  }
   return (
     <div>
-      <h1 className={styles.title}>{counter}</h1>
-      <Button text="Click Me" onClick={onClick}></Button>
-      <input value={keyword} onChange={onSearch} type="text" placeholder="Search Here!"/>
+      <button onClick={onClick}>{hide ? "Show" : "Hide"}</button>
+      {hide ? null : <Hello />}
     </div>
   );
 }
